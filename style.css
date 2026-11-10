@@ -9,11 +9,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Malg
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 a{color:inherit}
 
-/* 상단 로고 띠 */
-.brandbar{background:linear-gradient(180deg,#F4FAFF,#E3F2FD);border-bottom:1px solid #BFE3FA;padding:12px 0}
-.brandbar a{display:inline-block}
-.brandbar img{display:block;height:30px;width:auto}
-
 /* 히어로 */
 .hero{color:#fff;background:
   radial-gradient(900px 420px at 85% -10%,rgba(56,189,248,.32),transparent 60%),
@@ -42,7 +37,8 @@ a{color:inherit}
 
 /* 탭 */
 .tabs{position:sticky;top:0;z-index:10;display:flex;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:6px 8px;gap:4px}
-.tabs a{flex:1;text-align:center;padding:10px 0;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;color:var(--navy)}
+.tabs a{flex:1 1 auto;white-space:nowrap;text-align:center;padding:10px 6px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;color:var(--navy)}
+@media(max-width:360px){.tabs a{font-size:13px;padding:10px 2px}}
 .tabs a:active{background:#EAF0FA}
 
 /* 공통 */
