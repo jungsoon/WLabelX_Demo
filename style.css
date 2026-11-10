@@ -3,7 +3,7 @@
   --bg:#F5F7FB;--card:#FFFFFF;--line:#E3E8F1;--sub:#5B6B85;--ok:#2FA36B;--hold:#D99A2B;--ng:#D1493F;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:104px}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
   font-size:17px;line-height:1.65;padding-bottom:84px;-webkit-text-size-adjust:100%}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
@@ -24,16 +24,19 @@ a{color:inherit}
 .btn.gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1C1405;box-shadow:0 8px 24px rgba(200,162,74,.35)}
 .btn.ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
 
-/* 상단 이용 현황 (항상 보임) */
-.topbar{position:sticky;top:0;z-index:30;height:40px;display:flex;justify-content:center;align-items:center;gap:14px;
-  background:#07142A;color:#C5D3EA;font-size:14px;border-bottom:1px solid rgba(200,162,74,.35)}
-.topbar b{font-size:18px;color:var(--gold-2);font-weight:800;font-variant-numeric:tabular-nums;margin:0 1px}
-.topbar i{width:1px;height:16px;background:rgba(255,255,255,.25)}
+/* 히어로 오른쪽 이용 현황 카드 (좁은 화면에서는 버튼 아래) */
+.heroGrid{display:grid;gap:28px}
+.live{background:rgba(255,255,255,.07);border:1px solid rgba(230,200,119,.5);border-radius:22px;padding:18px 22px 10px;backdrop-filter:blur(6px)}
+.live[hidden]{display:none}
+.live-t{display:flex;align-items:center;gap:9px;margin:0 0 8px;font-size:13px;letter-spacing:.14em;color:var(--gold-2);font-weight:700}
+.live-n{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+.live-n span{font-size:15px;color:#C5D3EA}
+.live-n strong{font-size:44px;line-height:1;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
 .dot{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:live 2s infinite}
 @keyframes live{70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
 
 /* 탭 */
-.tabs{position:sticky;top:40px;z-index:10;display:flex;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:6px 8px;gap:4px}
+.tabs{position:sticky;top:0;z-index:10;display:flex;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:6px 8px;gap:4px}
 .tabs a{flex:1;text-align:center;padding:10px 0;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;color:var(--navy)}
 .tabs a:active{background:#EAF0FA}
 
@@ -106,12 +109,11 @@ footer .kicker{margin-bottom:10px}footer .co{color:#C5D3EA}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.journey li.now::before,.dot{animation:none}html{scroll-behavior:auto}}
 
 @media(min-width:640px){
+  .heroGrid{grid-template-columns:minmax(0,1fr) 290px;align-items:center;gap:36px}
+  .hero .wrap{max-width:980px}
   .hero h1{font-size:68px}.lead{font-size:30px}
   .results{grid-template-columns:repeat(3,1fr)}.res figcaption{font-size:14px}
   .pillars{grid-template-columns:1fr 1fr}
   .flow{grid-template-columns:repeat(6,1fr)}
   .metrics{grid-template-columns:repeat(4,1fr)}.metrics strong{font-size:22px}
 }
-
-/* 온라인 버전: 상단 집계 줄이 없으므로 탭을 맨 위에 붙임 */
-.tabs{top:0}html{scroll-padding-top:64px}
