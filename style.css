@@ -1,5 +1,5 @@
 :root{
-  --ink:#0B1B33;--navy:#0F2747;--blue:#1E5BD8;--sky:#38BDF8;--gold:#C8A24A;--gold-2:#E6C877;
+  --ink:#0B1B33;--navy:#0F2747;--blue:#1E5BD8;--sky:#38BDF8;--accent:#1B8FD6;--accent-l:#8AD8FF;
   --bg:#F5F7FB;--card:#FFFFFF;--line:#E3E8F1;--sub:#5B6B85;--ok:#2FA36B;--hold:#D99A2B;--ng:#D1493F;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -9,26 +9,31 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Malg
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 a{color:inherit}
 
+/* 상단 로고 띠 */
+.brandbar{background:linear-gradient(180deg,#F4FAFF,#E3F2FD);border-bottom:1px solid #BFE3FA;padding:12px 0}
+.brandbar a{display:inline-block}
+.brandbar img{display:block;height:30px;width:auto}
+
 /* 히어로 */
 .hero{color:#fff;background:
   radial-gradient(900px 420px at 85% -10%,rgba(56,189,248,.32),transparent 60%),
   radial-gradient(700px 380px at -10% 110%,rgba(30,91,216,.45),transparent 60%),
   linear-gradient(165deg,#081629 0%,#0F2747 55%,#12315F 100%);
-  padding:56px 0 48px;border-bottom:1px solid rgba(200,162,74,.5)}
-.eyebrow{margin:0 0 14px;font-size:13px;letter-spacing:.14em;color:var(--gold-2);text-transform:uppercase}
+  padding:56px 0 48px;border-bottom:1px solid rgba(56,189,248,.55)}
+.eyebrow{margin:0 0 14px;font-size:13px;letter-spacing:.14em;color:var(--accent-l);text-transform:uppercase}
 .hero h1{margin:0;font-size:54px;line-height:1.05;letter-spacing:-.01em;font-weight:800}
 .lead{margin:20px 0 0;font-size:25px;line-height:1.4;font-weight:700}
 .sub{margin:14px 0 0;font-size:16px;color:#C5D3EA}
 .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
 .btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;text-align:center}
-.btn.gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1C1405;box-shadow:0 8px 24px rgba(200,162,74,.35)}
+.btn.primary{background:linear-gradient(135deg,#A8E6FF,#38BDF8);color:#04263F;box-shadow:0 8px 24px rgba(56,189,248,.4)}
 .btn.ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
 
 /* 히어로 오른쪽 이용 현황 카드 (좁은 화면에서는 버튼 아래) */
 .heroGrid{display:grid;gap:28px}
-.live{background:rgba(255,255,255,.07);border:1px solid rgba(230,200,119,.5);border-radius:22px;padding:18px 22px 10px;backdrop-filter:blur(6px)}
+.live{background:rgba(255,255,255,.07);border:1px solid rgba(138,216,255,.5);border-radius:22px;padding:18px 22px 10px;backdrop-filter:blur(6px)}
 .live[hidden]{display:none}
-.live-t{display:flex;align-items:center;gap:9px;margin:0 0 8px;font-size:13px;letter-spacing:.14em;color:var(--gold-2);font-weight:700}
+.live-t{display:flex;align-items:center;gap:9px;margin:0 0 8px;font-size:13px;letter-spacing:.14em;color:var(--accent-l);font-weight:700}
 .live-n{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
 .live-n span{font-size:15px;color:#C5D3EA}
 .live-n strong{font-size:44px;line-height:1;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
@@ -42,7 +47,7 @@ a{color:inherit}
 
 /* 공통 */
 section{padding:44px 0 6px}
-.kicker{margin:0 0 6px;font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.kicker{margin:0 0 6px;font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
 h2{margin:0 0 20px;font-size:28px;line-height:1.3;letter-spacing:-.01em}
 h3{margin:0 0 6px;font-size:19px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:0 6px 24px rgba(15,39,71,.06)}
@@ -65,12 +70,12 @@ h3{margin:0 0 6px;font-size:19px}
 /* 기술 */
 .flow{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .flow li{background:var(--navy);color:#fff;border-radius:14px;padding:12px 8px;text-align:center;font-weight:700;font-size:15px}
-.flow i{display:block;font-style:normal;font-size:11px;color:var(--gold-2);letter-spacing:.1em;margin-bottom:2px}
+.flow i{display:block;font-style:normal;font-size:11px;color:var(--accent-l);letter-spacing:.1em;margin-bottom:2px}
 .pillars{display:grid;gap:12px}
 .pillars p{margin:0;font-size:15px;color:var(--sub)}
 .metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
 .metrics div{background:linear-gradient(160deg,#0F2747,#163C73);color:#fff;border-radius:18px;padding:18px 14px;text-align:center}
-.metrics strong{display:block;font-size:26px;line-height:1.2;color:var(--gold-2);font-weight:800;white-space:nowrap}
+.metrics strong{display:block;font-size:26px;line-height:1.2;color:var(--accent-l);font-weight:800;white-space:nowrap}
 .metrics small{font-size:14px;margin:0 1px}
 .metrics span{display:block;margin-top:6px;font-size:13px;color:#C5D3EA}
 
@@ -88,7 +93,7 @@ h3{margin:0 0 6px;font-size:19px}
 .chips b{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--navy);background:#F8FAFD}
 .systems{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
 .systems b{padding:6px 14px;border-radius:12px;background:var(--navy);color:#fff;font-size:14px;letter-spacing:.04em}
-.systems em{font-style:normal;font-weight:800;color:var(--gold);padding-left:4px}
+.systems em{font-style:normal;font-weight:800;color:var(--accent);padding-left:4px}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(30,91,216,0)}100%{box-shadow:0 0 0 0 rgba(30,91,216,0)}}
 
 /* 푸터 / 하단 버튼 */
@@ -99,7 +104,7 @@ footer .kicker{margin-bottom:10px}footer .co{color:#C5D3EA}
 .contact li{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)}
 .contact span{flex:0 0 64px;font-size:13px;color:#8FA3C4;letter-spacing:.04em}
 .contact a,.contact b{color:#fff;font-size:17px;font-weight:600;text-decoration:none;word-break:break-all}
-.contact a{border-bottom:1px solid var(--gold)}
+.contact a{border-bottom:1px solid var(--accent)}
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(245,247,251,.96) 40%)}
 .dock .btn{display:block;max-width:420px;margin:0 auto}
 
